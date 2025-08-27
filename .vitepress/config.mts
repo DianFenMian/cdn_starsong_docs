@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "vitepress-template",
-  description: "A starter template for VitePress",
+  title: "星歌计划文档",
+  description: "星歌计划 Minecraft 服务器官方文档",
   srcDir: 'pages',
   outDir: 'dist',
   ignoreDeadLinks: true,
@@ -14,45 +14,41 @@ export default defineConfig({
       level: [1, 3],    // 显示 h1 到 h3 级别的标题
     },
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Quick Start', link: '/quick-start/quick-start' },
-      { text: 'Examples', link: '/examples/markdown-examples' }
+      { text: '首页', link: '/' },
+      { text: '从这里开始', link: '/getting-started/welcome-letter' },
+      { text: '管理教程', link: '/tutorials/admin-manual' },
+      { text: '实时数据', link: '/updates/real-time-data' },
+      { text: '规则附录', link: '/appendix/readme' }
     ],
 
     sidebar: [
       {
-        text: 'Quick Start',
-        collapsed: true,
+        text: '从这里开始',
+        collapsed: false,
         items: [
-          { text: 'Overview', link: '/quick-start/quick-start' },
-          { text: 'Installation', link: '/quick-start/quick-start#installation' },
-          { text: 'Basic Setup', link: '/quick-start/quick-start#basic-setup' },
-          { text: 'Configuration', link: '/quick-start/quick-start#configuration' }
+          { text: '致您的一封信', link: '/getting-started/welcome-letter' }
         ]
       },
       {
-        text: 'Advanced',
-        collapsed: true,
+        text: 'SSP使用教程',
+        collapsed: false,
         items: [
-          { text: 'Custom Theme', link: '/advanced/custom-theme' },
-          { text: 'Markdown Extensions', link: '/advanced/markdown-extensions' },
-          { text: 'Code Highlighting', link: '/advanced/code-highlighting' }
+          { text: '管理手册', link: '/tutorials/admin-manual' }
         ]
       },
       {
-        text: 'Deployment',
-        collapsed: true,
+        text: '实时更新中',
+        collapsed: false,
         items: [
-          { text: 'Build for Production', link: '/quick-start/quick-start#build-for-production' },
-          { text: 'GitHub Pages', link: '/quick-start/quick-start#deploy-to-github-pages' },
-          { text: 'Netlify', link: '/quick-start/quick-start#netlify-deployment' }
+          { text: '实时数据', link: '/updates/real-time-data' }
         ]
       },
       {
-        text: 'Examples',
+        text: '附录',
+        collapsed: false,
         items: [
-          { text: 'Markdown Examples', link: '/examples/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/examples/api-examples' }
+          { text: '此分组阅前必读', link: '/appendix/readme' },
+          { text: '旅者公约（玩家守则）', link: '/appendix/player-covenant' }
         ]
       }
     ],
