@@ -1,81 +1,102 @@
-# VitePress Documentation Template
+# 星歌计划文档站-编辑指南
 
-A clean and customizable VitePress documentation template with a well-organized structure and modern design.
+## 一、欢迎
+星歌计划MC服务器文档站旨在为玩家提供清晰、准确、及时的服务器相关信息，包括玩法规则、指令说明、更新日志、插件玩法等内容，帮助新老玩家快速熟悉服务器特性，提升游戏体验。
+若您已经准备好为文档做出贡献，就开始阅读这篇编辑指南吧！
 
-## Deploy
-Deploy with EdgeOne Pages.
+## 二、编辑流程
+   - 在个人分支完成文档编辑
+   - 提交PR（Pull Request）到`main`分支
+   - 等待审核通过后合并至`main`分支发布
 
-[![EdgeOne Pages deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=vitepress-template)
+## 三、内容规范
+1. **准确性**
+   - 确保所有信息与服务器实际情况一致
+   - 涉及数据（如数值、概率）需精确无误
+   - 指令格式需严格按照服务器实际支持的格式书写
 
-## Features
+2. **专业性**
+   - 使用统一的术语体系（见附录术语表）
+   - 避免使用模糊表述（如"可能"、"大概"）
+   - 技术内容需经过测试验证
 
-- 📚 Well-organized documentation structure
-- 🎨 Customized theme and styling
-- 📱 Responsive design
-- 🔍 Full-text search
-- 📦 Easy to deploy
-- 🚀 Fast and lightweight
+## 四、Markdown格式要求
+1. **标题层级**
+   - 一级标题：`#` 用于页面主标题
+   - 二级标题：`##` 用于主要章节
+   - 三级标题：`###` 用于小节
+   - 最多使用至四级标题：`####`
 
-## Directory Structure
+2. **文本格式**
+   - 强调：重要内容使用 `**加粗**`
+   - 提示：注意事项使用 `> 引用块`
+   - 代码：指令或代码片段使用 `` `代码` `` 或代码块
+   - 列表：步骤说明使用有序列表 `1. 2. 3.`，并列项使用无序列表 `-`
 
-```
-.
-├── .vitepress/          # VitePress configuration
-│   ├── config.mts       # Site configuration
-│   └── theme/           # Custom theme files
-│       └── style.css    # Custom styles
-├── pages/              # Documentation pages
-│   ├── index.md        # Home page
-│   ├── quick-start/    # Quick start guide
-│   ├── advanced/       # Advanced topics
-│   ├── deployment/     # Deployment guides
-│   └── examples/       # Examples
-├── dist/               # Build output directory
-├── package.json        # Project dependencies
-├── edgeone.json        # Project deployment parameters
-└── .gitignore         # Git ignore rules
-```
 
-## Getting Started
+3. **图片规范**
+   - 存放路径：统一放在`/media`对应分类目录下
+   - 命名格式：小写字母+下划线，如`spawn_area.png`
+   - 插入格式：`![图片描述](路径)`，必须包含描述信息
 
-1. **Installation**
+4. **链接处理**
+   - 内部链接：使用相对路径，如`[返回首页](../README.md)`
+   - 外部链接：完整URL+说明，如`[MC官网](https://www.minecraft.net/)`
 
-```bash
-# Clone the repository
-git clone [your-repo-url]
+5. **特殊的**
+ ::: tip
+ Tip文本
+ :::
+ 
+ ::: warning
+ 警告文本
+ :::
+ 
+ ::: danger
+ 危险文本，用于
+ :::
+ 
+## 五、特殊内容处理
+1. **指令说明**
+   ```markdown
+   ### /sethome [名称]
+   - 功能：设置家的位置
+   - 权限：所有玩家
+   - 参数：
+     - [名称]：可选，家的名称，默认为"home"
+   - 示例：
+     ```
+     /sethome 我的家
+     ```
+   ```
 
-# Install dependencies
-npm install
-```
+2. **更新日志**
+   ```markdown
+   ## 版本 Alp.0.1（2025-8-27）
+   ### 新增内容
+   - 增加家具系统
 
-2. **Development**
+   ### 优化调整
+   - 降低矿石生成难度
+   - 优化村民交易机制
 
-```bash
-# Start local development server
-npm run dev
-```
+   ### 问题修复
+   - 修复传送指令失效问题
+   - 解决夜间怪物不生成的BUG
+   ```
 
-3. **Build**
+## 六、标准
+1. 内容准确无误，符合服务器实际情况
+2. 格式符合本指南要求，风格统一
+3. 无错别字、语病及歧义表述
+4. 图片清晰，链接有效
+5. 新增内容有实际价值，不重复已有信息
 
-```bash
-# Build for production
-npm run build
-```
+## 附录：术语表
+- 星点：服务器内主要货币单位
+- 领地：玩家可圈定的私人区域
+- 插件：服务器安装的自定义插件，包括datapack
 
-4. **Preview**
+---
 
-```bash
-# Preview production build
-npm run preview
-```
-
-## Documentation Structure
-
-- **Quick Start**: Basic setup and configuration guide
-- **Advanced**: In-depth topics and customization
-- **Examples**: Markdown and API usage examples
-- **Deployment**: Deployment guides for various platforms
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+编辑过程中如有疑问，请在GitHub仓库提交issue或联系管理员。
