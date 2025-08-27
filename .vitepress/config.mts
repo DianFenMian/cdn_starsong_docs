@@ -20,10 +20,17 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '新人指南',
+        text: '指南',
+        collapsed: false,
+        items: [
+          { text: '新人指南', link: 'beginner_helper/helper' },
+        ]
+      },
+      {
+        text: '文档',
         collapsed: true,
         items: [
-          { text: 'Overview', link: '/quick-start/quick-start' },
+          { text: '服务器守则', link: 'docs/rules' },
         ]
       }
     ],

@@ -3,20 +3,12 @@
 layout: home
 
 hero:
-  name: "vitepress-template"
-  text: "A starter template for VitePress"
-  tagline: My great project tagline
+  name: "星歌计划文档站"
+  text: "为Minecraft服务器创建的一个简单的文档站"
+  tagline: Its Fun!
   actions:
     - theme: brand
-      text: Let's Begin
-      link: /quick-start/quick-start
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      text: 开始阅读
+      link: beginner_helper/helper'
 ---
 
