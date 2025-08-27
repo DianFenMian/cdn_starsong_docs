@@ -106,6 +106,67 @@
   --vp-home-hero-image-filter: blur(44px);
 }
 
+/* Custom gradient background for homepage */
+.VPHome {
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #f5576c 75%,
+    #4facfe 100%
+  );
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Add a subtle overlay for better text readability */
+.VPHome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure hero content is above the overlay */
+.VPHome .VPHero {
+  position: relative;
+  z-index: 2;
+}
+
+/* Alternative animated gradient background (uncomment to use) */
+/*
+.VPHome {
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+*/
+
 @media (min-width: 640px) {
   :root {
     --vp-home-hero-image-filter: blur(56px);
@@ -183,7 +244,7 @@
   font-size: 10px;  /* 设置更小的字体大小 */
 }
 
-/* 右侧目录样式调整 */
+/* Right sidebar style adjustments */
 .VPDocOutlineItem.level-1 {
   font-size: 14px;
   font-weight: 600;
@@ -197,5 +258,54 @@
 .VPDocOutlineItem.level-3 {
   font-size: 12px;
   padding-left: 16px !important;
+}
+
+/**
+ * Homepage Gradient Enhancement
+ * -------------------------------------------------------------------------- */
+
+/* Enhance hero text visibility on gradient background */
+.VPHome .VPHero .VPHeroInfo {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhance features section on gradient background */
+.VPHome .VPFeatures {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  margin: 40px 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode adjustments for gradient background */
+.dark .VPHome .VPHero .VPHeroInfo {
+  background: rgba(30, 30, 30, 0.95);
+  color: var(--vp-c-text-1);
+}
+
+.dark .VPHome .VPFeatures {
+  background: rgba(30, 30, 30, 0.98);
+}
+
+/* Mobile responsiveness for gradient background */
+@media (max-width: 768px) {
+  .VPHome .VPHero .VPHeroInfo {
+    margin: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+  
+  .VPHome .VPFeatures {
+    margin: 20px 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
 }
 
