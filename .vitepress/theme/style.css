@@ -54,11 +54,11 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  /* Blue theme colors */
-  --vp-c-brand-1: #00b2ee;
-  --vp-c-brand-2: #1ac0f5;
-  --vp-c-brand-3: #00a0d9;
-  --vp-c-brand-soft: rgba(0, 178, 238, 0.14);
+  /* Golden theme colors */
+  --vp-c-brand-1: #dfaf6a;
+  --vp-c-brand-2: #e6bd7f;
+  --vp-c-brand-3: #d49c55;
+  --vp-c-brand-soft: rgba(223, 175, 106, 0.14);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
