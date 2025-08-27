@@ -97,9 +97,14 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  /* Clean and minimalist hero styling without gradients */
-  --vp-home-hero-name-color: var(--vp-c-brand-1);
-  --vp-home-hero-name-background: transparent;
+  /* Clean and minimalist hero styling with golden gradient for title */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #dfaf6a 30%,
+    #f2c574 70%,
+    #e8b968 100%
+  );
 
   /* Remove background image and filter effects for clean design */
   --vp-home-hero-image-background-image: none;
@@ -364,5 +369,49 @@ button:focus {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/**
+ * Enhanced Hero Title Gradient Effects
+ * -------------------------------------------------------------------------- */
+
+/* Additional styling for hero title gradient */
+.VPHero .name {
+  background: linear-gradient(
+    120deg,
+    #dfaf6a 0%,
+    #f2c574 40%,
+    #e8b968 70%,
+    #d49c55 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  letter-spacing: -0.02em;
+}
+
+/* Ensure gradient works in different browsers */
+.VPHero .name .clip {
+  background: linear-gradient(
+    120deg,
+    #dfaf6a 0%,
+    #f2c574 40%,
+    #e8b968 70%,
+    #d49c55 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fallback for browsers that don't support background-clip */
+@supports not (-webkit-background-clip: text) {
+  .VPHero .name,
+  .VPHero .name .clip {
+    color: #dfaf6a;
+    background: none;
+    -webkit-text-fill-color: unset;
+  }
 }
 
