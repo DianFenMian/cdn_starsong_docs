@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 从这里开始
-      link: /getting-started/welcome-letter
+      link: beginner_helper/helper
     - theme: alt
       text: 查看规则
-      link: /appendix/player-covenant
+      link: docs/rules
 
 features:
   - title: 🎆 新手指南
