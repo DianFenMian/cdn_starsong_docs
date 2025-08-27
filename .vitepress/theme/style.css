@@ -44,15 +44,21 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  /* Typography - Chinese fonts first */
+  --vp-font-family-base: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", "Arial", "Helvetica", sans-serif;
+  --vp-font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", monospace;
+
+  /* Blue color scheme inspired by ClassIsland */
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  /* Blue theme colors */
+  --vp-c-brand-1: #00b2ee;
+  --vp-c-brand-2: #1ac0f5;
+  --vp-c-brand-3: #00a0d9;
+  --vp-c-brand-soft: rgba(0, 178, 238, 0.14);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -91,31 +97,13 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
+  /* Clean and minimalist hero styling without gradients */
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-home-hero-name-background: transparent;
 
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
+  /* Remove background image and filter effects for clean design */
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
 }
 
 /**
@@ -138,64 +126,243 @@
 }
 
 /**
- * Custom Sidebar Styles
+ * Modern Sidebar and Navigation Styles
  * -------------------------------------------------------------------------- */
 
-/* 一级目录标题样式（如 Quick Start, Advanced, Deployment, Examples） */
-.VPNavSidebar .VPNavSidebarItem .VPNavSidebarItemText {
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  color: var(--vp-c-text-1) !important;
-  margin-bottom: 8px !important;
-  padding: 8px 0 !important;
+/* Sidebar container styling */
+.VPSidebar {
+  background-color: var(--vp-c-bg-soft);
+  border-right: 1px solid var(--vp-c-divider);
 }
 
-/* 二级目录标题样式（如 Overview, Installation, Custom Theme 等） */
-.VPNavSidebar .VPNavSidebarItem .VPNavSidebarItem .VPNavSidebarItemText {
+/* Primary navigation items (level 0) */
+.VPSidebarItem.level-0 > .VPSidebarItemText {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  padding: 12px 0 8px 0 !important;
+  margin-bottom: 4px !important;
+  letter-spacing: 0.02em;
+}
+
+/* Secondary navigation items (level 1) */
+.VPSidebarItem.level-1 {
+  padding-left: 12px !important;
+}
+
+.VPSidebarItem.level-1 > .VPSidebarItemText {
   font-size: 14px !important;
   font-weight: 500 !important;
   color: var(--vp-c-text-2) !important;
-  padding: 4px 0 4px 16px !important;
-  margin-left: 8px !important;
+  padding: 6px 0 !important;
+  transition: color 0.2s ease;
 }
 
-/* 侧边栏链接样式 */
-.VPNavSidebar .VPNavSidebarItem .VPNavSidebarItem .VPNavSidebarItemLink {
+/* Sidebar links */
+.VPSidebarItem .VPSidebarItemLink {
   font-size: 14px !important;
-  padding-left: 16px !important;
   color: var(--vp-c-text-2) !important;
+  padding: 6px 0 6px 12px !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin: 2px 0;
 }
 
-/* 侧边栏链接悬停效果 */
-.VPNavSidebar .VPNavSidebarItem .VPNavSidebarItem .VPNavSidebarItemLink:hover {
+/* Sidebar link hover effects */
+.VPSidebarItem .VPSidebarItemLink:hover {
   color: var(--vp-c-brand-1) !important;
+  background-color: var(--vp-c-brand-soft) !important;
 }
 
-/* 当前活动链接样式 */
-.VPNavSidebar .VPNavSidebarItem .VPNavSidebarItem .VPNavSidebarItemLink.active {
+/* Active sidebar link */
+.VPSidebarItem .VPSidebarItemLink.active {
   color: var(--vp-c-brand-1) !important;
+  background-color: var(--vp-c-brand-soft) !important;
   font-weight: 600 !important;
+  border-left: 3px solid var(--vp-c-brand-1);
+  padding-left: 9px !important;
 }
 
-/* 二级目录样式 */
-.VPSidebarItem.level-1 {
-  padding-left: 8px;
-  font-size: 10px;  /* 设置更小的字体大小 */
+/* Collapsible group styling */
+.VPSidebarGroup .VPSidebarGroupLabel {
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  padding: 8px 0 !important;
 }
 
-/* 右侧目录样式调整 */
+/* Table of contents (outline) styling */
+.VPDocOutlineItem {
+  transition: all 0.2s ease;
+}
+
 .VPDocOutlineItem.level-1 {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 4px 0 !important;
 }
 
 .VPDocOutlineItem.level-2 {
-  font-size: 12px;
-  padding-left: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding-left: 12px !important;
+  color: var(--vp-c-text-2) !important;
 }
 
 .VPDocOutlineItem.level-3 {
-  font-size: 12px;
-  padding-left: 16px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  padding-left: 24px !important;
+  color: var(--vp-c-text-3) !important;
+}
+
+/* Outline item hover effects */
+.VPDocOutlineItem:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Navigation bar improvements */
+.VPNavBar {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.dark .VPNavBar {
+  background-color: rgba(26, 26, 26, 0.85);
+}
+
+/**
+ * General Layout and Typography Improvements
+ * -------------------------------------------------------------------------- */
+
+/* Enhanced content area styling */
+.VPDoc .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.VPDoc .content {
+  padding: 32px 24px;
+}
+
+/* Improved heading spacing and typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--vp-font-family-base);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  border-bottom: 2px solid var(--vp-c-divider);
+  padding-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+/* Enhanced paragraph styling */
+p {
+  line-height: 1.7;
+  margin: 1em 0;
+  color: var(--vp-c-text-2);
+}
+
+/* Better list styling */
+ul, ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+li {
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+/* Enhanced code blocks */
+pre {
+  border-radius: 8px;
+  margin: 1.5em 0;
+  overflow: auto;
+}
+
+inline code {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+/* Card-like styling for content sections */
+.vp-doc blockquote {
+  background-color: var(--vp-c-bg-soft);
+  border-left: 4px solid var(--vp-c-brand-1);
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Enhanced table styling */
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .VPDoc .content {
+    padding: 24px 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 

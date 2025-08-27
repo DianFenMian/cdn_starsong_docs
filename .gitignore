@@ -6,7 +6,7 @@ node_modules
 # Production
 dist
 cache
-
+classisland-docs-next-main
 # VitePress
 .vitepress/cache
 .vitepress/dist
