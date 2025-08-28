@@ -18,6 +18,8 @@
 
 ![启用资源包](./pic/enableRP.png)
 
+在最后，你可以通过’’’mc.starsong.top’’’进入服务器
+
 ## 二、Q&A
 
 Q:
