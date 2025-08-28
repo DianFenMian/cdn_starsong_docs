@@ -1,64 +1,16 @@
-/**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
- */
-
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
-
 :root {
-  /* Typography - Chinese fonts first */
   --vp-font-family-base: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", "Arial", "Helvetica", sans-serif;
   --vp-font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", monospace;
 
-  /* Blue color scheme inspired by ClassIsland */
-  --vp-c-default-1: var(--vp-c-gray-1);
-  --vp-c-default-2: var(--vp-c-gray-2);
-  --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
+  --vp-c-default-1: #374151;
+  --vp-c-default-2: #6b7280;
+  --vp-c-default-3: #d1d5db;
+  --vp-c-default-soft: rgba(55, 65, 81, 0.05);
 
-  /* Golden theme colors */
-  --vp-c-brand-1: #dfaf6a;
-  --vp-c-brand-2: #e6bd7f;
-  --vp-c-brand-3: #d49c55;
-  --vp-c-brand-soft: rgba(223, 175, 106, 0.14);
+  --vp-c-brand-1: #b88c4a;
+  --vp-c-brand-2: #d19f57;
+  --vp-c-brand-3: #dfaf6a;
+  --vp-c-brand-soft: rgba(223, 175, 106, 0.15);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -76,10 +28,6 @@
   --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
-/**
- * Component: Button
- * -------------------------------------------------------------------------- */
-
 :root {
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: var(--vp-c-white);
@@ -92,33 +40,12 @@
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
 }
 
-/**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
 :root {
-  /* Clean and minimalist hero styling with golden gradient for title */
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(
-    120deg,
-    #dfaf6a 30%,
-    #c29254
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #dfaf6a 50%,
-    #c29254 50%
-  );
-
-  /* Remove background image and filter effects for clean design */
-  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-name-background: linear-gradient(120deg, var(--vp-c-brand-3) 30%, var(--vp-c-brand-1));
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, var(--vp-c-brand-3) 50%, var(--vp-c-brand-2) 50%);
   --vp-home-hero-image-filter: none;
 }
-
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
 
 :root {
   --vp-custom-block-tip-border: transparent;
@@ -127,25 +54,36 @@
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
 
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
-
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+  --docsearch-logo-color: var(--vp-c-brand-1) !important;
 }
 
-/**
- * Modern Sidebar and Navigation Styles
- * -------------------------------------------------------------------------- */
+:root {
+  --vp-code-line-highlight-color: rgba(223, 175, 106, 0.1);
+  --vp-code-copy-code-hover-bg: rgba(223, 175, 106, 0.15);
+}
 
-/* Sidebar container styling */
+:root {
+  --vp-nav-item-hover-bg: var(--vp-c-brand-soft);
+  --vp-nav-item-active-color: var(--vp-c-brand-2);
+}
+
+:root {
+  --vp-link-color: var(--vp-c-brand-2);
+  --vp-link-hover-color: var(--vp-c-brand-1);
+  --vp-link-active-color: var(--vp-c-brand-1);
+}
+
+:root {
+  --vp-footer-link-hover-color: var(--vp-c-brand-3);
+}
+
 .VPSidebar {
   background-color: var(--vp-c-bg-soft);
   border-right: 1px solid var(--vp-c-divider);
 }
 
-/* Primary navigation items (level 0) */
 .VPSidebarItem.level-0 > .VPSidebarItemText {
   font-size: 16px !important;
   font-weight: 600 !important;
@@ -155,7 +93,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Secondary navigation items (level 1) */
 .VPSidebarItem.level-1 {
   padding-left: 12px !important;
 }
@@ -168,7 +105,6 @@
   transition: color 0.2s ease;
 }
 
-/* Sidebar links */
 .VPSidebarItem .VPSidebarItemLink {
   font-size: 14px !important;
   color: var(--vp-c-text-2) !important;
@@ -176,31 +112,34 @@
   border-radius: 6px;
   transition: all 0.2s ease;
   margin: 2px 0;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
 }
 
-/* Sidebar link hover effects */
 .VPSidebarItem .VPSidebarItemLink:hover {
   color: var(--vp-c-brand-1) !important;
   background-color: var(--vp-c-brand-soft) !important;
 }
 
-/* Active sidebar link */
 .VPSidebarItem .VPSidebarItemLink.active {
   color: var(--vp-c-brand-1) !important;
   background-color: var(--vp-c-brand-soft) !important;
   font-weight: 600 !important;
   border-left: 3px solid var(--vp-c-brand-1);
   padding-left: 9px !important;
+  text-indent: 0;
 }
 
-/* Collapsible group styling */
 .VPSidebarGroup .VPSidebarGroupLabel {
   font-weight: 600 !important;
   color: var(--vp-c-text-1) !important;
   padding: 8px 0 !important;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
 }
 
-/* Table of contents (outline) styling */
 .VPDocOutlineItem {
   transition: all 0.2s ease;
 }
@@ -225,12 +164,10 @@
   color: var(--vp-c-text-3) !important;
 }
 
-/* Outline item hover effects */
 .VPDocOutlineItem:hover {
   color: var(--vp-c-brand-1) !important;
 }
 
-/* Navigation bar improvements */
 .VPNavBar {
   backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.85);
@@ -240,11 +177,6 @@
   background-color: rgba(26, 26, 26, 0.85);
 }
 
-/**
- * General Layout and Typography Improvements
- * -------------------------------------------------------------------------- */
-
-/* Enhanced content area styling */
 .VPDoc .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -254,13 +186,13 @@
   padding: 32px 24px;
 }
 
-/* Improved heading spacing and typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--vp-font-family-base);
   letter-spacing: -0.02em;
   line-height: 1.4;
-  margin-top: 2em;
-  margin-bottom: 0.8em;
+  margin-top: calc(1.5em + 2px);
+  margin-bottom: calc(0.8em - 2px);
+  vertical-align: baseline;
 }
 
 h1 {
@@ -284,14 +216,12 @@ h3 {
   color: var(--vp-c-text-1);
 }
 
-/* Enhanced paragraph styling */
 p {
   line-height: 1.7;
   margin: 1em 0;
   color: var(--vp-c-text-2);
 }
 
-/* Better list styling */
 ul, ol {
   padding-left: 1.5em;
   margin: 1em 0;
@@ -300,9 +230,9 @@ ul, ol {
 li {
   margin: 0.5em 0;
   line-height: 1.6;
+  vertical-align: middle;
 }
 
-/* Enhanced code blocks */
 pre {
   border-radius: 8px;
   margin: 1.5em 0;
@@ -315,18 +245,18 @@ inline code {
   border-radius: 4px;
   padding: 0.2em 0.4em;
   font-size: 0.9em;
+  vertical-align: middle;
 }
 
-/* Card-like styling for content sections */
 .vp-doc blockquote {
   background-color: var(--vp-c-bg-soft);
   border-left: 4px solid var(--vp-c-brand-1);
   margin: 1.5em 0;
   padding: 1em 1.5em;
   border-radius: 0 8px 8px 0;
+  line-height: 1.6;
 }
 
-/* Enhanced table styling */
 table {
   border-collapse: collapse;
   margin: 1.5em 0;
@@ -340,6 +270,8 @@ th, td {
   border: 1px solid var(--vp-c-divider);
   padding: 12px 16px;
   text-align: left;
+  line-height: 1.5;
+  vertical-align: middle;
 }
 
 th {
@@ -348,7 +280,6 @@ th {
   color: var(--vp-c-text-1);
 }
 
-/* Responsive improvements */
 @media (max-width: 768px) {
   .VPDoc .content {
     padding: 24px 16px;
@@ -356,19 +287,23 @@ th {
   
   h1 {
     font-size: 2rem;
+    line-height: 1.3;
   }
   
   h2 {
     font-size: 1.75rem;
+    line-height: 1.35;
+  }
+  
+  .VPSidebarItem.level-1 {
+    padding-left: 8px !important;
   }
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
 a:focus,
 button:focus {
   outline: 2px solid var(--vp-c-brand-1);
@@ -376,41 +311,25 @@ button:focus {
   border-radius: 4px;
 }
 
-/**
- * Enhanced Hero Title Gradient Effects
- * -------------------------------------------------------------------------- */
-
-/* Additional styling for hero title gradient */
 .VPHero .name {
-  background: linear-gradient(
-    120deg,
-    #dfaf6a 0%,
-    #f2c574 40%,
-    #e8b968 70%,
-    #d49c55 100%
-  );
+  background: linear-gradient(120deg, #dfaf6a 0%, #f2c574 40%, #e8b968 70%, #d49c55 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
   letter-spacing: -0.02em;
+  line-height: 1.2;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-/* Ensure gradient works in different browsers */
 .VPHero .name .clip {
-  background: linear-gradient(
-    120deg,
-    #dfaf6a 0%,
-    #f2c574 40%,
-    #e8b968 70%,
-    #d49c55 100%
-  );
+  background: linear-gradient(120deg, #dfaf6a 0%, #f2c574 40%, #e8b968 70%, #d49c55 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Fallback for browsers that don't support background-clip */
 @supports not (-webkit-background-clip: text) {
   .VPHero .name,
   .VPHero .name .clip {
@@ -420,3 +339,34 @@ button:focus {
   }
 }
 
+.vp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.vp-doc [class*="custom-block"] {
+  padding: 1em 1.5em;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --vp-c-brand-soft: rgba(223, 175, 106, 0.08);
+    --vp-code-line-highlight-color: rgba(223, 175, 106, 0.08);
+  }
+}
+
+::selection {
+  background-color: rgba(223, 175, 106, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(223, 175, 106, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--vp-c-brand-2);
+}
