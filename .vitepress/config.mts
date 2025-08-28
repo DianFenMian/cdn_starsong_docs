@@ -30,7 +30,6 @@ export default defineConfig({
         text: '指南', 
         items: [
           { text: '新人指南', link: '/beginner_helper/helper' },
-          { text: '游戏技巧', link: '/guides/advanced' },
           { text: '常见问题', link: '/docs/faq' }
         ]
       },
@@ -38,8 +37,9 @@ export default defineConfig({
         text: '文档', 
         items: [
           { text: '服务器规则', link: '/docs/rules' },
-          { text: '图像使用规则', link: '/docs/picrules' },
-          { text: '指令说明', link: '/docs/commands' }
+          { text: '图像使用规则', link: '/docs/pic_rules' },
+          { text: '指令说明', link: '/docs/commands' },
+          { text: '插件介绍', link: '/docs/plugins' }
         ]
       },
       {
@@ -68,7 +68,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '服务器守则', link: '/docs/rules' },
-          { text: '图像使用守则', link: '/docs/picrules' },
+          { text: '图像使用守则', link: '/docs/pic_rules' },
           { text: '指令说明', link: '/docs/commands' },
           { text: '插件介绍', link: '/docs/plugins' }
         ]
