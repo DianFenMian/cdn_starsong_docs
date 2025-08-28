@@ -411,7 +411,7 @@ FAQ 部分
 
 ---
 
-<div align=\"center\">
+<div align="center">
   <p>📚 遵循这些准则，创建对用户真正有价值的内容！</p>
-  <p>如有疑问，请查看 <a href=\"STYLE_GUIDE.md\">写作规范</a> 或联系文档团队。</p>
+  <p>如有疑问，请查看 <a href="STYLE_GUIDE.md">写作规范</a> 或联系文档团队。</p>
 </div>

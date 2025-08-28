@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "星歌计划 - 文档站",
-  description: "适用于 Minecraft 服务器的信息显示和管理工具",
+  description: "星歌计划 Minecraft 服务器官方文档 - 新手指南、服务器规则、游戏指令帮助",
   srcDir: 'pages',
   outDir: 'dist',
   ignoreDeadLinks: true,
@@ -33,7 +33,7 @@ export default defineConfig({
     // 导航栏配置 - 简洁专业的结构，参考 ClassIsland 设计
     nav: [
       { text: '首页', link: '/' },
-      { text: '应用帮助', link: '/beginner_helper/helper' },
+      { text: '快速开始', link: '/beginner_helper/helper' },
       { 
         text: '服务器文档', 
         items: [
@@ -58,7 +58,7 @@ export default defineConfig({
     sidebar: {
       '/': [
         {
-          text: '🎮 应用帮助',
+          text: '🚀 快速开始',
           collapsed: false,
           items: [
             { text: '新人指南', link: '/beginner_helper/helper' },
@@ -88,7 +88,7 @@ export default defineConfig({
       ],
       '/beginner_helper/': [
         {
-          text: '🎮 应用帮助',
+          text: '🚀 快速开始',
           items: [
             { text: '新人指南', link: '/beginner_helper/helper' },
             { text: '返回首页', link: '/' }

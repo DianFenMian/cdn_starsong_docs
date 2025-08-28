@@ -205,7 +205,7 @@
 
 ---
 
-<div align=\"center\">
+<div align="center">
   <p>📚 本术语表持续更新中，如有建议请提交 Issue 或 PR</p>
   <p>最后更新：2024年1月 | 版本：v1.0</p>
 </div>

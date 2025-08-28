@@ -5,10 +5,10 @@ home: true
 hero:
   name: "星歌计划"
   text: "服务器官方文档"
-  tagline: 适用于 Minecraft 服务器的信息显示和管理工具
+  tagline: 星歌计划 Minecraft 服务器官方文档 - 新手指南、游戏规则、功能介绍
   actions:
     - theme: brand
-      text: 开始使用
+      text: 快速开始
       link: /beginner_helper/helper
     - theme: alt
       text: 查看规则
@@ -18,8 +18,8 @@ hero:
       link: https://github.com/DianFenMian/cdn_starsong_docs
 
 features:
-  - icon: 🎮
-    title: 新人指南
+  - icon: 🚀
+    title: 快速开始
     details: 了解服务器的基本使用方法和快速上手指南，让你轻松入门。
     link: /beginner_helper/helper
   - icon: 📋
@@ -55,7 +55,7 @@ features:
 <div class="vp-card-container">
   <div class="vp-card">
     <div class="vp-card-header">
-      <h3>🎯 观看入门教程</h3>
+      <h3>🚀 快速入门</h3>
     </div>
     <div class="vp-card-body">
       <p>10 分钟快速上手星歌计划服务器。</p>
@@ -65,7 +65,7 @@ features:
   
   <div class="vp-card">
     <div class="vp-card-header">
-      <h3>📦 安装与设置</h3>
+      <h3>📦 连接服务器</h3>
     </div>
     <div class="vp-card-body">
       <p>了解游戏客户端的要求，以及如何在你的设备上连接服务器。</p>
@@ -81,7 +81,7 @@ features:
 <div class="vp-card-container">
   <div class="vp-card">
     <div class="vp-card-header">
-      <h3>🎮 应用帮助</h3>
+      <h3>🚀 快速开始</h3>
     </div>
     <div class="vp-card-body">
       <p>了解服务器的基本使用方法和快速入门指南。</p>
@@ -130,7 +130,7 @@ features:
 
 星歌计划是一个专注于建设与合作的 Minecraft 生存服务器，提供完善的领地保护、经济系统和丰富的插件功能。本文档将帮助您快速了解和使用服务器的各项功能。
 
-## 开始使用
+## 快速开始
 
 如果您是第一次加入星歌计划，建议按照以下顺序学习：
 
