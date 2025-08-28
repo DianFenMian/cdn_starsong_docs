@@ -5,7 +5,6 @@ home: true
 hero:
   name: "星歌计划"
   text: "服务器官方文档"
-  tagline: 星歌计划 Minecraft 服务器官方文档 - 新手指南、游戏规则、功能介绍
   actions:
     - theme: brand
       text: 快速开始
@@ -13,10 +12,6 @@ hero:
     - theme: alt
       text: 查看规则
       link: /docs/rules
-    - theme: alt
-      text: GitHub 仓库
-      link: https://github.com/DianFenMian/cdn_starsong_docs
-
 features:
   - icon: 🚀
     title: 快速开始
