@@ -31,6 +31,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: '服务器守则', link: 'docs/rules' },
+          { text: '图像使用守则', link: 'docs/picrules' },
         ]
       }
     ],
