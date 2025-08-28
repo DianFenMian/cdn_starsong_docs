@@ -29,7 +29,7 @@ export default defineConfig({
       { 
         text: '指南', 
         items: [
-          { text: '新人指南', link: '/beginner_helper/helper' },
+          { text: '新人指南', link: '/docs/helper' },
           { text: '常见问题', link: '/docs/faq' }
         ]
       },
@@ -58,7 +58,7 @@ export default defineConfig({
         text: '🎮 快速开始',
         collapsed: false,
         items: [
-          { text: '新人指南', link: '/beginner_helper/helper' },
+          { text: '新人指南', link: '/docs/helper' },
           { text: '服务器规则', link: '/docs/rules' },
           { text: '常见问题', link: '/docs/faq' }
         ]
@@ -105,7 +105,7 @@ export default defineConfig({
     // 页脚配置
     footer: {
       message: '基于 MIT 许可发布',
-      copyright: 'Copyright © 2024 星歌计划团队'
+      copyright: 'Copyright © 2024 星歌计划'
     },
     
     // 编辑页面链接
