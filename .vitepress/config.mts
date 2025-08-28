@@ -3,109 +3,129 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "星歌计划 - 文档站",
-  description: "游玩手册 / 插件指南 / 命令帮助",
+  description: "适用于 Minecraft 服务器的信息显示和管理工具",
   srcDir: 'pages',
   outDir: 'dist',
   ignoreDeadLinks: true,
   cleanUrls: true,
   
+  // 多语言配置
+  lang: 'zh-CN',
+  
   // 头部标签配置
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
-    ['meta', { name: 'keywords', content: 'Minecraft, 星歌计划, 服务器, 文档, 指南' }],
-    ['meta', { name: 'author', content: '星歌计划团队' }]
+    ['meta', { name: 'keywords', content: 'Minecraft, 星歌计划, 服务器, 文档, 指南, 新人教程' }],
+    ['meta', { name: 'author', content: '星歌计划团队' }],
+    ['meta', { name: 'theme-color', content: '#dfaf6a' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }]
   ],
   
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     outline: {
-      level: [1, 3],    // 显示 h1 到 h3 级别的标题
+      level: [2, 3],
       label: '页面导航'
     },
     
-    // 导航栏配置
+    // 导航栏配置 - 简洁专业的结构，参考 ClassIsland 设计
     nav: [
       { text: '首页', link: '/' },
+      { text: '应用帮助', link: '/beginner_helper/helper' },
       { 
-        text: '指南', 
-        items: [
-          { text: '新人指南', link: '/beginner_helper/helper' },
-          { text: '常见问题', link: '/docs/faq' }
-        ]
-      },
-      { 
-        text: '文档', 
+        text: '服务器文档', 
         items: [
           { text: '服务器规则', link: '/docs/rules' },
           { text: '图像使用规则', link: '/docs/pic_rules' },
           { text: '指令说明', link: '/docs/commands' },
-          { text: '插件介绍', link: '/docs/plugins' }
-        ]
-      },
-      {
-        text: '贡献',
-        items: [
-          { text: '贡献指南', link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/CONTRIBUTING.md' },
-          { text: '写作规范', link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/STYLE_GUIDE.md' },
-          { text: '术语表', link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/GLOSSARY.md' }
-        ]
-      }
-    ],
-
-    // 侧边栏配置
-    sidebar: [
-      {
-        text: '🎮 快速开始',
-        collapsed: false,
-        items: [
-          { text: '新人指南', link: '/beginner_helper/helper' },
-          { text: '服务器规则', link: '/docs/rules' },
+          { text: '插件介绍', link: '/docs/plugins' },
           { text: '常见问题', link: '/docs/faq' }
         ]
       },
       {
-        text: '📚 服务器文档',
-        collapsed: false,
+        text: '社区',
         items: [
-          { text: '服务器守则', link: '/docs/rules' },
-          { text: '图像使用守则', link: '/docs/pic_rules' },
-          { text: '指令说明', link: '/docs/commands' },
-          { text: '插件介绍', link: '/docs/plugins' }
-        ]
-      },
-      {
-        text: '🛠️ 贡献指南',
-        collapsed: true,
-        items: [
-          { 
-            text: '如何贡献', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/CONTRIBUTING.md'
-          },
-          { 
-            text: '写作规范', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/STYLE_GUIDE.md'
-          },
-          { 
-            text: '内容准则', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/CONTENT_GUIDELINES.md'
-          },
-          { 
-            text: '术语表', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/GLOSSARY.md'
-          }
+          { text: '贡献指南', link: '/CONTRIBUTING' },
+          { text: '写作规范', link: '/docs/STYLE_GUIDE' },
+          { text: '术语表', link: '/docs/GLOSSARY' }
         ]
       }
     ],
+
+    // 侧边栏配置 - ClassIsland 风格的层级结构
+    sidebar: {
+      '/': [
+        {
+          text: '🎮 应用帮助',
+          collapsed: false,
+          items: [
+            { text: '新人指南', link: '/beginner_helper/helper' },
+            { text: '常见问题', link: '/docs/faq' }
+          ]
+        },
+        {
+          text: '📚 服务器文档',
+          collapsed: false,
+          items: [
+            { text: '服务器规则', link: '/docs/rules' },
+            { text: '图像使用规则', link: '/docs/pic_rules' },
+            { text: '指令说明', link: '/docs/commands' },
+            { text: '插件介绍', link: '/docs/plugins' }
+          ]
+        },
+        {
+          text: '🛠️ 社区',
+          collapsed: true,
+          items: [
+            { text: '贡献指南', link: '/CONTRIBUTING' },
+            { text: '写作规范', link: '/docs/STYLE_GUIDE' },
+            { text: '内容准则', link: '/docs/CONTENT_GUIDELINES' },
+            { text: '术语表', link: '/docs/GLOSSARY' }
+          ]
+        }
+      ],
+      '/beginner_helper/': [
+        {
+          text: '🎮 应用帮助',
+          items: [
+            { text: '新人指南', link: '/beginner_helper/helper' },
+            { text: '返回首页', link: '/' }
+          ]
+        }
+      ],
+      '/docs/': [
+        {
+          text: '📚 服务器文档',
+          items: [
+            { text: '服务器规则', link: '/docs/rules' },
+            { text: '图像使用规则', link: '/docs/pic_rules' },
+            { text: '指令说明', link: '/docs/commands' },
+            { text: '插件介绍', link: '/docs/plugins' },
+            { text: '常见问题', link: '/docs/faq' }
+          ]
+        },
+        {
+          text: '📖 社区指南',
+          items: [
+            { text: '写作规范', link: '/docs/STYLE_GUIDE' },
+            { text: '内容准则', link: '/docs/CONTENT_GUIDELINES' },
+            { text: '术语表', link: '/docs/GLOSSARY' }
+          ]
+        }
+      ]
+    },
 
     // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/DianFenMian/cdn_starsong_docs' }
     ],
     
-    // 页脚配置
+    // 页脚配置 - ClassIsland 风格的专业版权信息
     footer: {
       message: '基于 MIT 许可发布',
-      copyright: 'Copyright © 2024 星歌计划团队'
+      copyright: 'Copyright © 2024 星歌计划团队 | 本文档以 CC BY-NC-SA 4.0 许可协议授权'
     },
     
     // 编辑页面链接
