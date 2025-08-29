@@ -39,15 +39,8 @@ export default defineConfig({
           { text: '服务器规则', link: '/docs/rules' },
           { text: '图像使用规则', link: '/docs/pic_rules' },
           { text: '指令说明', link: '/docs/commands' },
+          { text: '更新日志', link: '/docs/version' },
           { text: '插件介绍', link: '/docs/plugins' }
-        ]
-      },
-      {
-        text: '贡献',
-        items: [
-          { text: '贡献指南', link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/CONTRIBUTING.md' },
-          { text: '写作规范', link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/STYLE_GUIDE.md' },
-          { text: '术语表', link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/GLOSSARY.md' }
         ]
       }
     ],
