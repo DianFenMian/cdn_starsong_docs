@@ -12,6 +12,6 @@
 
 4.启用服务器资源包：可选，推荐启用
 
-![启用资源包](./pic/enableRP.png)
+![启用资源包](./docs/pic/enableRP.png)
 
 5.最后，通过地址``mc.starsong.top``进入服务器
