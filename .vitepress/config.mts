@@ -13,7 +13,7 @@ export default defineConfig({
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
     ['meta', { name: 'keywords', content: 'Minecraft, 星歌计划, 服务器, 文档, 指南' }],
-    ['meta', { name: 'author', content: '星歌计划团队' }]
+    ['meta', { name: 'author', content: '星歌计划' }]
   ],
   
   themeConfig: {
@@ -31,16 +31,6 @@ export default defineConfig({
         items: [
           { text: '新人指南', link: '/docs/helper' },
           { text: '常见问题', link: '/docs/faq' }
-        ]
-      },
-      { 
-        text: '文档', 
-        items: [
-          { text: '服务器规则', link: '/docs/rules' },
-          { text: '图像使用规则', link: '/docs/pic_rules' },
-          { text: '指令说明', link: '/docs/commands' },
-          { text: '更新日志', link: '/docs/version' },
-          { text: '插件介绍', link: '/docs/plugins' }
         ]
       }
     ],
@@ -62,6 +52,7 @@ export default defineConfig({
         items: [
           { text: '服务器守则', link: '/docs/rules' },
           { text: '图像使用守则', link: '/docs/pic_rules' },
+          { text: '更新日志', link: '/docs/version' },
           { text: '指令说明', link: '/docs/commands' },
           { text: '插件介绍', link: '/docs/plugins' }
         ]
