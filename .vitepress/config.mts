@@ -41,7 +41,7 @@ export default defineConfig({
         text: '🎮 快速开始',
         collapsed: false,
         items: [
-          { text: '加入服务器', link: '/join' },
+          { text: '加入服务器', link: '/docs/join' },
           { text: '服务器规则', link: '/docs/rules' },
           { text: '常见问题', link: '/docs/faq' }
         ]
@@ -50,11 +50,11 @@ export default defineConfig({
         text: '📚 服务器文档',
         collapsed: false,
         items: [
-          { text: '服务器守则', link: '/docs/rules' },
-          { text: '图像使用守则', link: '/docs/pic_rules' },
           { text: '更新日志', link: '/docs/version' },
           { text: '指令说明', link: '/docs/commands' },
-          { text: '插件介绍', link: '/docs/plugins' }
+          { text: '插件介绍', link: '/docs/plugins' },
+          { text: '游戏守则', link: '/docs/rules' },
+          { text: '图像守则', link: '/docs/pic_rules' }
         ]
       }
     ],

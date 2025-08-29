@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 从这里开始
-      link: docs/helper
+      link: docs/join
     - theme: alt
       text: 查看规则
       link: docs/rules
