@@ -41,7 +41,7 @@ export default defineConfig({
         text: '🎮 快速开始',
         collapsed: false,
         items: [
-          { text: '新人指南', link: '/docs/helper' },
+          { text: '加入服务器', link: '/join' },
           { text: '服务器规则', link: '/docs/rules' },
           { text: '常见问题', link: '/docs/faq' }
         ]
@@ -59,25 +59,7 @@ export default defineConfig({
       },
       {
         text: '🛠️ 贡献指南',
-        collapsed: true,
-        items: [
-          { 
-            text: '如何贡献', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/CONTRIBUTING.md'
-          },
-          { 
-            text: '写作规范', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/STYLE_GUIDE.md'
-          },
-          { 
-            text: '内容准则', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/CONTENT_GUIDELINES.md'
-          },
-          { 
-            text: '术语表', 
-            link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/docs/GLOSSARY.md'
-          }
-        ]
+        link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/CONTRIBUTING.md'
       }
     ],
 
