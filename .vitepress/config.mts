@@ -56,10 +56,6 @@ export default defineConfig({
           { text: '指令说明', link: '/docs/commands' },
           { text: '插件介绍', link: '/docs/plugins' }
         ]
-      },
-      {
-        text: '🛠️ 贡献指南',
-        link: 'https://github.com/DianFenMian/cdn_starsong_docs/blob/main/CONTRIBUTING.md'
       }
     ],
 
